@@ -1,0 +1,4 @@
+errors.log
+accesses.log
+application/logs/
+application/cache/
