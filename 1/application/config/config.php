@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://codeigniter.tangyue.com';
+$config['base_url']	= 'http://pktangyue.sinaapp.com';
 
 /*
 |--------------------------------------------------------------------------
@@ -224,7 +224,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = 'f4be50f49d25982f4acdd1a98d51b4e0';
 
 /*
 |--------------------------------------------------------------------------
