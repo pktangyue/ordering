@@ -48,11 +48,11 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'root';
-$db['default']['password'] = 'tang4163';
-$db['default']['database'] = 'student';
-$db['default']['dbdriver'] = 'mysql';
+$db['default']['hostname'] = SAE_MYSQL_HOST_M;
+$db['default']['username'] = SAE_MYSQL_USER;
+$db['default']['password'] = SAE_MYSQL_PASS;
+$db['default']['database'] = SAE_MYSQL_DB;
+$db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
 $db['default']['db_debug'] = TRUE;
@@ -63,6 +63,7 @@ $db['default']['dbcollat'] = 'utf8_general_ci';
 $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
+$db['default']['port'] = SAE_MYSQL_PORT;
 
 
 /* End of file database.php */
