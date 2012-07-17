@@ -1,0 +1,54 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>student list</title>
+        <script src="/js/jquery-1.7.2.js"></script>
+        <script src="/js/underscore.js"></script>
+        <script src="/js/backbone.js"></script>
+        <script src="/js/student.js"></script>
+        <link rel="stylesheet" type="text/css" href="/css/student.css">
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <td>number</td>
+                    <td>name</td>
+                    <td>gender</td>
+                    <td>school</td>
+                    <td>major</td>
+                    <td>birthday</td>
+                    <td>region</td>
+                    <td>profile</td>
+                    <td>operate</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr id="J_new_row" class="none">
+                    <td><input type="text" name="number"/></td>
+                    <td><input type="text" name="name"/></td>
+                    <td>
+                        <input id="gender0" type="radio" value="0" name="gender"/>
+                        <label for="gender0">female</label>
+                        <input id="gender1" type="radio" value="1" name="gender"/>
+                        <label for="gender1">male</label>
+                    </td>
+                    <td><input type="text" name="school"/></td>
+                    <td><input type="text" name="major"/></td>
+                    <td><input type="text" name="birthday"/></td>
+                    <td><input type="text" name="region"/></td>
+                    <td><input type="text" name="profile"/></td>
+                    <td><a id="J_add" href="javascript:void(0);">add</a></td>
+                </tr>
+                <tr>
+                    <td colspan=9><a id="J_new" href="javascript:void(0);">add new student</a></td>
+                </tr>
+            </tfoot>
+        </table>
+    </body>
+</html>

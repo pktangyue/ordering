@@ -1,0 +1,4 @@
+input[type="text"]{width:120px;}
+table   {border-collapse:collapse;width:100%;}
+table td{border:1px solid #B3B4BD;text-align:center;}
+.none   {display:none;}
