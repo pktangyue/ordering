@@ -32,6 +32,9 @@ $(function(){
                             $error.hide();
                             StudentNumber.isValid = true;
                         }
+                    },
+                    error : function(model,result){
+                        alert('error');
                     }
                 });
             }

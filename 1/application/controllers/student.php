@@ -18,6 +18,10 @@ class Student extends CI_Controller {
             return;
         }
         $data = json_decode(file_get_contents('php://input'));
+        if (!preg_match('/^\d+$/', $data->number)) {
+            echo 'error number';
+            return;
+        }
         $this->student_model->insert($data);
     }
     public function get_cities($province_id) {

@@ -26,6 +26,9 @@ $(function(){
             },
             validate: function(attrs) {
                 var error_msg = '';
+                if( attrs.number && ! this.is_positive(attrs.number) ){
+                    error_msg += 'need positive integer!\n';
+                }
                 if( !Student.Util.check_number() ){
                     error_msg += 'dupplicate number!\n';
                 }
@@ -35,6 +38,9 @@ $(function(){
                     }
                 });
                 return error_msg;
+            },
+            is_positive : function(v){
+                return /^\d+$/.test(v);
             }
         });
         Add.View = Backbone.View.extend({
