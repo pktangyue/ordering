@@ -1,5 +1,5 @@
 $(function(){
-    var AddStudent = (function(){;
+    var StudentAdd = (function(){;
         var $J_new      = $('#J_new');
         var $J_new_row  = $('#J_new_row');
 
@@ -42,7 +42,7 @@ $(function(){
             },
             events      : {
                 'click #J_new'        : 'new_clicked',
-                'click #J_add'        : 'add_clicked'
+                'click #J_add'        : 'add_clicked',
             },
             update_values : function(event){
                 var fields = this.$('input,select').serializeArray();
@@ -66,7 +66,7 @@ $(function(){
                         alert(result);
                     }
                 });
-            }
+            },
         });
         return Add.initialize();
     })();
