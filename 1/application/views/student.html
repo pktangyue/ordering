@@ -31,7 +31,7 @@
             </tbody>
             <tfoot>
                 <tr id="J_new_row" class="none">
-                    <td><input type="text" name="number"/></td>
+                    <td><input id="J_number" type="text" name="number"/></td>
                     <td><input type="text" name="name"/></td>
                     <td>
                         <input id="gender0" type="radio" value="0" name="gender"/>
@@ -61,8 +61,10 @@
                 </tr>
             </tfoot>
         </table>
+        <p class="error none">dupplicate number</p>
         <script src="/js/student/region.js"></script>
         <script src="/js/student/student_add.js"></script>
+        <script src="/js/student/student_number.js"></script>
         <script src="/js/lib/jquery-ui-1.8.21.custom.min.js"></script>
     </body>
 </html>

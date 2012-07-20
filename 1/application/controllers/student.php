@@ -25,4 +25,7 @@ class Student extends CI_Controller {
             'cities' => $this->region_model->get_cities_by_id($province_id)
         ));
     }
+    public function check_number($number) {
+        echo $this->student_model->is_number_exists($number);
+    }
 }

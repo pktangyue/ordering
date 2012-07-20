@@ -9,4 +9,8 @@ class Student_model extends CI_Model {
     function insert($data) {
         $this->db->insert($this->table_name, $data);
     }
+    function is_number_exists($number) {
+        $this->db->from($this->table_name)->where('number', $number);
+        return $this->db->count_all_results() == 0 ? False : True;
+    }
 }

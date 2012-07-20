@@ -26,6 +26,9 @@ $(function(){
             },
             validate: function(attrs) {
                 var error_msg = '';
+                if( !Student.Util.check_number() ){
+                    error_msg += 'dupplicate number!\n';
+                }
                 $.each(attrs,function(i,v){
                     if( !attrs[i] ){
                         error_msg += 'no ' + i.replace('_id','') + '!\n';
