@@ -4,7 +4,7 @@ CREATE TABLE `student` (
     `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
     `number` int(10) unsigned NOT NULL,
     `name` varchar(16) NOT NULL,
-    `gender` bit(1) NOT NULL,
+    `gender` char(1) NOT NULL,
     `school` varchar(255) NOT NULL,
     `major` varchar(255) NOT NULL,
     `birthday` date NOT NULL,
