@@ -13,4 +13,23 @@ class Student_model extends CI_Model {
         $this->db->from($this->table_name)->where('number', $number);
         return $this->db->count_all_results() == 0 ? False : True;
     }
+    function get_list($page = 1, $per_page = 20) {
+        $this->db->select(array(
+            'number',
+            'name',
+            'if(gender,"male","female") as gender',
+            'school',
+            'major',
+            'birthday',
+            '(select name from region where id = province_id) as province',
+            '(select name from region where id = city_id) as city',
+            'profile'
+        ) , false);
+        $query = $this->db->get($this->table_name, $per_page, $per_page * ($page - 1));
+        return $query->result();
+    }
+    function get_count() {
+        $this->db->from($this->table_name);
+        return $this->db->count_all_results();
+    }
 }
