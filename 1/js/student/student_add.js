@@ -52,6 +52,7 @@ $(function(){
             events      : {
                 'click #J_new'        : 'new_clicked',
                 'click #J_add'        : 'add_clicked',
+                'click #J_cancel'     : 'cancel_clicked'
             },
             update_values : function(event){
                 var fields = this.$('input,select').serializeArray();
@@ -67,15 +68,19 @@ $(function(){
             add_clicked : function(event){
                 this.model.save( this.update_values(), {
                     success : function(model,result){
-                        $J_new_row.hide()
-                        .find('input[type=text],select').val('').end()
-                        .find('input[type=radio]').prop('checked',false);
+                        document.location.reload();
                     },
                     error : function(model,result){
                         alert(result);
                     }
                 });
             },
+            cancel_clicked : function(event){
+                $J_new_row.hide()
+                .find('input[type=text],select').val('').end()
+                .find('input[type=radio]').prop('checked',false);
+                Student.Util.hide_error();
+            }
         });
         return Add.initialize();
     })();

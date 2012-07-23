@@ -7,7 +7,15 @@ $(function(){
                 new StudentNumber.View();
                 return this;
             },
-            isValid : true
+            isValid : true,
+            show_error : function(){
+                $error.show();
+                this.isValid = false;
+            },
+            hide_error : function(){
+                $error.hide();
+                this.isValid = true;
+            }
         };
         StudentNumber.Model = Backbone.Model.extend({
             initialize : function(){
@@ -26,11 +34,9 @@ $(function(){
                 this.model.set({id : this.$el.val()}).fetch({
                     success : function(model,result){
                         if(result){
-                            $error.show();
-                            StudentNumber.isValid = false;
+                            StudentNumber.show_error();
                         }else{
-                            $error.hide();
-                            StudentNumber.isValid = true;
+                            StudentNumber.hide_error();
                         }
                     },
                     error : function(model,result){
@@ -46,4 +52,7 @@ $(function(){
     window.Student.Util.check_number = function(){
         return StudentNumber.isValid;
     };
+    window.Student.Util.hide_error = function(){
+        StudentNumber.hide_error();
+    }
 });
