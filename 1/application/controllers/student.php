@@ -8,17 +8,12 @@ class Student extends CI_Controller {
         $this->load->model('region_model');
     }
     public function index() {
-        $this->page();
-    }
-    public function page($page = 1) {
-        $list = $this->student_model->get_list($page, $this->per_page);
+        $list = $this->student_model->get_list();
         $provinces = $this->region_model->get_provinces();
-        $pagination = $this->get_pagination_html();
         $this->parser->parse('/student.html', array(
             'title' => 'student manage',
             'list' => $list,
             'provinces' => $provinces,
-            'pagination' => $pagination
         ));
     }
     public function add() {
@@ -39,19 +34,5 @@ class Student extends CI_Controller {
     }
     public function check_number($number) {
         echo $this->student_model->is_number_exists($number);
-    }
-    private function get_pagination_html() {
-        $this->load->library('pagination');
-        $count = $this->student_model->get_count();
-        $config = array(
-            'base_url' => '/student/page/',
-            'total_rows' => $count,
-            'per_page' => $this->per_page,
-            'use_page_numbers' => true,
-            'full_tag_open' => '<p>',
-            'full_tag_close' => '</p>',
-        );
-        $this->pagination->initialize($config);
-        return $this->pagination->create_links();
     }
 }
