@@ -28,6 +28,9 @@ class Student extends CI_Controller {
         }
         echo json_encode($this->student_model->insert($data));
     }
+    public function delete($id) {
+        echo json_encode($this->student_model->delete($id));
+    }
     public function get_cities($province_id) {
         echo json_encode(array(
             'cities' => $this->region_model->get_cities_by_id($province_id)

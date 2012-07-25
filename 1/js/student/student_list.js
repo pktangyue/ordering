@@ -69,6 +69,10 @@ $(function(){
             tagName : 'tr',
             initialize : function(){
                 this.model.bind('change',this.render,this);
+                this.model.bind('destroy',this.remove,this);
+            },
+            events : {
+                'click .delete' : 'delete_item'
             },
             template : [
                 '<td>{{number}}</td>',
@@ -84,6 +88,10 @@ $(function(){
             render : function(){
                 this.$el.html(Mustache.to_html(this.template,this.model.attributes));
                 return this;
+            },
+            delete_item : function(){
+                this.model.urlRoot = '/student/delete/';
+                this.model.destroy();
             }
         });
         Student.AddView = Backbone.View.extend({

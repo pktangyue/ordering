@@ -29,6 +29,11 @@ class Student_model extends CI_Model {
         $result = $query->result();
         return $result[0];
     }
+    function delete($id) {
+        $this->db->delete($this->table_name, array(
+            'id' => $id
+        ));
+    }
     function is_number_exists($number) {
         $this->db->from($this->table_name)->where('number', $number);
         return $this->db->count_all_results() == 0 ? False : True;
