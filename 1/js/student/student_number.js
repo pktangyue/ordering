@@ -48,11 +48,11 @@ $(function(){
         return StudentNumber.initialize();
     })();
 
-    window.Student = window.Student || { Util : {} };
-    window.Student.Util.check_number = function(){
+    window.Util = window.Util || { Student : {} };
+    window.Util.Student.check_number = function(){
         return StudentNumber.isValid;
     };
-    window.Student.Util.hide_error = function(){
+    window.Util.Student.hide_error = function(){
         StudentNumber.hide_error();
     }
 });

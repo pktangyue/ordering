@@ -8,13 +8,14 @@ class Student extends CI_Controller {
         $this->load->model('region_model');
     }
     public function index() {
-        $list = $this->student_model->get_list();
         $provinces = $this->region_model->get_provinces();
         $this->parser->parse('/student.html', array(
             'title' => 'student manage',
-            'list' => $list,
             'provinces' => $provinces,
         ));
+    }
+    public function get_items() {
+        echo json_encode($this->student_model->get_list());
     }
     public function add() {
         if (!$this->input->is_ajax_request()) {
@@ -25,7 +26,7 @@ class Student extends CI_Controller {
             echo 'error number';
             return;
         }
-        $this->student_model->insert($data);
+        echo json_encode($this->student_model->insert($data));
     }
     public function get_cities($province_id) {
         echo json_encode(array(

@@ -25,22 +25,6 @@
                 </tr>
             </thead>
             <tbody>
-                {list}
-                <tr>
-                    <td>{number}</td>
-                    <td>{name}</td>
-                    <td>{gender}</td>
-                    <td>{school}</td>
-                    <td>{major}</td>
-                    <td>{birthday}</td>
-                    <td>{province}&nbsp;{city}</td>
-                    <td>{profile}</td>
-                    <td>
-                        <a class="edit" href="javascript:void(0);">[edit]</a>
-                        <a class="delete" href="javascript:void(0);">[delete]</a>
-                    </td>
-                </tr>
-                {/list}
             </tbody>
             <tfoot>
                 <tr id="J_new_row" class="none">
@@ -79,7 +63,7 @@
         </table>
         <p class="error none">dupplicate number</p>
         <script src="/js/student/region.js"></script>
-        <script src="/js/student/student_add.js"></script>
+        <script src="/js/student/student_list.js"></script>
         <script src="/js/student/student_number.js"></script>
         <script src="/js/lib/jquery-ui-1.8.21.custom.min.js"></script>
     </body>
